@@ -1,22 +1,27 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import "../styles.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
+    <div className="navbar">
+      <div className="nav-container">
+        <div className="logo">
+          <img src="logo.jpg" className="logo-img" alt="Website Logo" />
+        </div>
+        <div className="links">
+          <Link to={"#"}>Technology</Link>
+          <Link to={"#"}>Sports</Link>
+          <Link to={"#"}>Software</Link>
+          <Link to={"#"}>Politics</Link>
+          <Link className="add-blog" to={"#"}>
+            Add Blog
+          </Link>
+          <spam>Username</spam>
+          <span>Logout</span>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -79,3 +79,36 @@
   color: red;
   text-align: center;
 } /* Register Page CSS Ends */
+
+/* Navbar Css Starts */
+.navbar {
+  background: gray;
+}
+.nav-container {
+  padding: 1rem 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links {
+  padding-left: 25rem;
+  display: flex;
+  gap: 12px;
+}
+.logo-img {
+  width: 200px;
+  padding-left: 1em;
+}
+.add-blog {
+  color: black;
+  text-decoration: none;
+}
+/* Navbar CSS ends */
+
+/* Footer CSS starts */
+.footer {
+  margin-top: 100px;
+  padding: 20px;
+  background: gray;
+  color: black;
+}
