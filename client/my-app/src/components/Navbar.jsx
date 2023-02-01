@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles.css";
 import { Link } from "react-router-dom";
-
+import Logo from "../images/logo.jpg";
 const NavBar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
         <div className="logo">
-          <img src="logo.jpg" className="logo-img" alt="Website Logo" />
+          <img src={Logo} className="logo-img" alt="Website Logo" />
         </div>
         <div className="links">
           <Link to={"#"}>Technology</Link>
