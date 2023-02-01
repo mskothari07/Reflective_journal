@@ -35,14 +35,14 @@ const Home = () => {
         {blogs.map((blog) => (
           <div className="blog" key={blog.id}>
             <div className="blog-img">
-              <img src={blog.img} alt="blog" />
+              <img className="img" src={blog.img} alt="blog" />
             </div>
             <div className="blog-content">
               <Link className="link" to={`/blog/${blog.id}`}>
-                <h1>{blog.title}</h1>
+                <h1 className="blog-title">{blog.title}</h1>
               </Link>
-              <p>{blog.desc}</p>
-              <button>Read It</button>
+              <p className="blog-desc">{blog.desc}</p>
+              <button className="blog-bn">More..</button>
             </div>
           </div>
         ))}

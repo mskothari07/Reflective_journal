@@ -113,3 +113,41 @@
   color: black;
 }
 /* Footer CSS ends */
+
+/* Home Page CSS  */
+.blogs {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+.blog {
+  display: flex;
+  gap: 100px;
+}
+.blog-img {
+  flex: 2;
+}
+.blog-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.blog-content {
+  font-size: 48px;
+}
+.blog-desc {
+  font-size: 18px;
+}
+.blog-bn {
+  width: fit-content;
+  height: fit-content;
+  font-size: 20px;
+}
