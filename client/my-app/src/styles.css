@@ -163,6 +163,8 @@
 }
 .blog-content {
   flex: 5;
+  display: flex;
+  flex-direction: column;
 }
 .blog-menu {
   flex: 2;
@@ -203,6 +205,13 @@
 }
 .edit {
   gap: 10px;
-
   display: flex;
+}
+.blog-title {
+  color: white;
+  font-size: 43px;
+}
+.blog-para {
+  text-align: justify;
+  line-height: 30px;
 }

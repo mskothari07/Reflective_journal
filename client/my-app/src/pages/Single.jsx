@@ -28,10 +28,10 @@ const Single = () => {
             <img className="icon" src={Delete} alt="delete-icon" />
           </div>
         </div>
-        <h1>
+        <h1 className="blog-title">
           Blog Title Lorem ipsum dolor sit amet consectetur adipisicing elit
         </h1>
-        <p>
+        <p className="blog-para">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus
           excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem
           ratione sit debitis deserunt repellendus numquam ab vel perspiciatis
@@ -39,7 +39,7 @@ const Single = () => {
           possimus excepturi aliquid nihil cumque ipsam facere aperiam at!{" "}
         </p>
         <br />
-        <p>
+        <p className="blog-para">
           Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel
           perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur
           adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam
@@ -48,7 +48,7 @@ const Single = () => {
           consectetur adipisicing elit.
         </p>
         <br />
-        <p>
+        <p className="blog-para">
           A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea
           dolorem ratione sit debitis deserunt repellendus numquam ab vel
           perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur
@@ -56,19 +56,17 @@ const Single = () => {
           facere aperiam at!
         </p>
         <br />
-        Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel
-        perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere
-        aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam
-        ab vel perspiciatis corporis!
-        <br />
-        <br />
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus
-        excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem
-        ratione sit debitis deserunt repellendus numquam ab vel perspiciatis
-        corporis!
+        <p className="blog-para">
+          Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel
+          perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam
+          facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus
+          numquam ab vel perspiciatis corporis! Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. A possimus excepturi aliquid nihil
+          cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis
+          deserunt repellendus numquam ab vel perspiciatis corporis!
+        </p>
       </div>
-      <div className="blog-menu">m</div>
     </div>
   );
 };
