@@ -14,10 +14,10 @@ const NavBar = () => {
           <Link to={"#"}>Sports</Link>
           <Link to={"#"}>Software</Link>
           <Link to={"#"}>Politics</Link>
-          <Link className="add-blog" to={"#"}>
+          <Link className="add-blog" to={"/write"}>
             Add Blog
           </Link>
-          <spam>Username</spam>
+          <span>Username</span>
           <span>Logout</span>
         </div>
       </div>

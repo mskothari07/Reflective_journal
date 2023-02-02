@@ -215,3 +215,59 @@
   text-align: justify;
   line-height: 30px;
 }
+/* Single Blog Page CSS Ends  */
+.write {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.write-content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.write-menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-edit {
+  height: 300px;
+  overflow: scroll;
+  border: 1px solid white;
+}
+.edit-quill {
+  height: 100%;
+}
+.write-item {
+  border: 1px solid white;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-title {
+  border: 1px solid white;
+}
+
+.img-upload {
+  cursor: pointer;
+}
+
+.upload-bn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.cat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
