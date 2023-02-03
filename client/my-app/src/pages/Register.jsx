@@ -12,7 +12,7 @@ const Register = () => {
 
   const [err, setError] = useState(null); // setting error
 
-  const navigate = useNavigate(); //after login redirecting to login page
+  const navigate = useNavigate(); //after register redirecting to login page
 
   const handleChange = (e) => {
     //getting input data
@@ -62,6 +62,7 @@ const Register = () => {
         <button onClick={handleSubmit} className="registerButton">
           Register
         </button>
+        {/* show the error on frontend */}
         {err && <p className="registerError">{err}</p>}
         {/* redirect to Login page  */}
         <span className="alreadyUser">
