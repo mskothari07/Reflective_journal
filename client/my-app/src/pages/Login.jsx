@@ -1,6 +1,7 @@
-import axios from "axios";
-import React, { useState } from "react";
+//import axios from "axios";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Login = () => {
   //getting inputs
@@ -13,6 +14,10 @@ const Login = () => {
 
   const navigate = useNavigate(); //after login redirecting to home page
 
+  const { login } = useContext(AuthContext);
+
+  //console.log(currentUser);
+
   const handleChange = (e) => {
     //getting input data
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -21,7 +26,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); //cancel the default event behavior (browser refresh)
     try {
-      await axios.post("/auth/login", inputs);
+      await login(inputs);
       navigate("/");
     } catch (err) {
       setError(err.response.data);
@@ -29,7 +34,7 @@ const Login = () => {
     }
   };
 
-  console.log(inputs);
+  //console.log(inputs);
   return (
     <div className="loginPage">
       <h1>Login</h1>
