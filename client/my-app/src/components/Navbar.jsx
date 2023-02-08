@@ -9,13 +9,15 @@ const NavBar = () => {
     <div className="navbar">
       <div className="nav-container">
         <div className="logo">
-          <img src={Logo} className="logo-img" alt="Website Logo" />
+          <Link to="/">
+            <img src={Logo} className="logo-img" alt="Website Logo" />
+          </Link>
         </div>
         <div className="links">
-          <Link to={"#"}>Technology</Link>
-          <Link to={"#"}>Sports</Link>
-          <Link to={"#"}>Software</Link>
-          <Link to={"#"}>Politics</Link>
+          <Link to={"/?cat=technology"}>Technology</Link>
+          <Link to={"/?cat=sports"}>Sports</Link>
+          <Link to={"/?cat=software"}>Software</Link>
+          <Link to={"/?cat=politics"}>Politics</Link>
           <Link className="add-blog" to={"/write"}>
             Add Blog
           </Link>
