@@ -7,9 +7,8 @@ export const getBlogs = (req, res) => {
     : "SELECT * FROM blogs";
 
   db.query(q, [req.query.cat], (err, data) => {
-    if (err) return res.send(500).json(err);
-
-    return res.send(200).json(data);
+    if (err) return res.status(500).send(err);
+    return res.json(data);
   });
 };
 
