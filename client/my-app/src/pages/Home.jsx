@@ -17,24 +17,6 @@ const Home = () => {
     };
     fetchData();
   }, [cat]);
-  // const [blogs, setBlogs] = useState([]);
-
-  // const cat = useLocation().search;
-
-  // //console.log(cat);
-
-  // //we cant create async function using useEffect
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await axios.get(`/blogs${cat}`);
-  //       setBlogs(res.data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [cat]);
 
   console.log(blogs);
   return (

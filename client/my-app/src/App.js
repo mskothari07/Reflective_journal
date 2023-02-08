@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     element: <Register />, //it will show the register page,we don't need navbar and footer
   },
   {
-    path: "/blogs/:id",
+    path: "/blog/:id",
     element: (
       <div>
         <NavBar />
