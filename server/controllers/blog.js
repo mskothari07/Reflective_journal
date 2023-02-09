@@ -30,7 +30,7 @@ export const addBlog = (req, res) => {
 
 export const deleteBlog = (req, res) => {
   const token = req.cookies.unlock_token;
-  if (!token) return res.status(401).json("Not Valid");
+  if (!token) return res.status(401).json("No token");
 
   jwt.verify(token, "jwtkey", (err, userInfo) => {
     if (err) return res.status(404).json("Invalid Token");
