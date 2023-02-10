@@ -45,7 +45,7 @@ const Single = () => {
         <div className="user">
           <img
             className="user-img"
-            src="https://images.pexels.com/photos/4230630/pexels-photo-4230630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&usqp=CAU"
             alt="user"
           />
           <div className="user-info">
@@ -57,7 +57,7 @@ const Single = () => {
           {/* Check for current user and match with blog username and if both are same then and only it will show edit and delete option */}
           {currentUser.username === blog.username && (
             <div className="edit">
-              <Link to={`/write?edit=2`}>
+              <Link to={`/write?edit=2`} state={blog}>
                 <img className="icon" src={Edit} alt="edit-icon" />
               </Link>
               <img

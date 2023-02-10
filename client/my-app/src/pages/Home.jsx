@@ -18,21 +18,27 @@ const Home = () => {
     fetchData();
   }, [cat]);
 
-  console.log(blogs);
+  //removing <p> tags
+  const normalText = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent;
+  };
+
   return (
     <div className="home-page">
       <div className="blogs">
         {blogs.map((blog) => (
           <div className="blog" key={blog.id}>
             <div className="blog-img">
-              <img className="img" src={blog.img} alt="blog" />
+              <img className="img" src={`../upload/${blog.img}`} alt="blog" />
             </div>
             <div className="blog-content">
+              <h1 className="blog-title">{blog.title}</h1>
+
+              <p className="blog-desc">{normalText(blog.desc)}</p>
               <Link className="link" to={`/blog/${blog.id}`}>
-                <h1 className="blog-title">{blog.title}</h1>
+                <button className="blog-bn">More..</button>
               </Link>
-              <p className="blog-desc">{blog.desc}</p>
-              <button className="blog-bn">More..</button>
             </div>
           </div>
         ))}

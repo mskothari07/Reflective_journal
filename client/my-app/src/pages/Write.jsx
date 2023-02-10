@@ -3,11 +3,15 @@ import "../styles.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+import moment from "moment";
 
 const Write = () => {
-  const [value, setValue] = useState("");
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
+  const state = useLocation().state;
+
+  const [value, setValue] = useState(state?.title || "");
+  const [title, setTitle] = useState(state?.desc || "");
+  const [category, setCategory] = useState(state?.cat || "");
   const [file, setFile] = useState(null);
 
   const upload = async () => {
@@ -15,7 +19,7 @@ const Write = () => {
       const formData = new FormData();
       formData.append("file", file);
       const res = await axios.post("/upload", formData);
-      console.log(res.data);
+      return res.data;
     } catch (err) {
       console.log(err);
     }
@@ -23,7 +27,26 @@ const Write = () => {
 
   const handlePublish = async (e) => {
     e.preventDefault();
-    upload();
+    const imgUrl = await upload();
+
+    try {
+      state
+        ? await axios.put(`/blogs/${state.id}`, {
+            title,
+            desc: value,
+            category,
+            img: file ? imgUrl : "",
+          })
+        : await axios.post(`/blogs/`, {
+            title,
+            desc: value,
+            category,
+            img: file ? imgUrl : "",
+            date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+          });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   //console.log(value);
@@ -32,6 +55,7 @@ const Write = () => {
       <div className="write-content">
         <input
           className="input-title"
+          value={title}
           type="text"
           placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
@@ -63,6 +87,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={category === "Technology"}
               name="cat"
               value="Technology"
               id="tech"
@@ -73,6 +98,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={category === "Sports"}
               name="cat"
               value="Sports"
               id="sport"
@@ -83,6 +109,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={category === "Software"}
               name="cat"
               value="Software"
               id="Software"
@@ -93,6 +120,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={category === "Politics"}
               name="cat"
               value="Politics"
               id="politics"
