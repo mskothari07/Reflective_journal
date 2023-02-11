@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 //Image Upload middleware using multer
 const upload = multer({ storage });
 
-app.post("/server/upload", upload.single("file"), function (req, res) {
+app.post("server/upload", upload.single("file"), function (req, res) {
   const file = req.file;
   res.status(200).json(file.filename);
 });

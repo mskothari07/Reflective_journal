@@ -3,15 +3,16 @@ import "../styles.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 const Write = () => {
   const state = useLocation().state;
+  const navigate = useNavigate();
 
   const [value, setValue] = useState(state?.title || "");
   const [title, setTitle] = useState(state?.desc || "");
-  const [category, setCategory] = useState(state?.cat || "");
+  const [cat, setCat] = useState(state?.cat || "");
   const [file, setFile] = useState(null);
 
   const upload = async () => {
@@ -34,16 +35,17 @@ const Write = () => {
         ? await axios.put(`/blogs/${state.id}`, {
             title,
             desc: value,
-            category,
+            cat,
             img: file ? imgUrl : "",
           })
         : await axios.post(`/blogs/`, {
             title,
             desc: value,
-            category,
+            cat,
             img: file ? imgUrl : "",
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
           });
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -83,48 +85,48 @@ const Write = () => {
           </div>
         </div>
         <div className="write-item">
-          <h1>Category</h1>
+          <h1>cat</h1>
           <div className="cat">
             <input
               type="radio"
-              checked={category === "Technology"}
+              checked={cat === "Technology"}
               name="cat"
               value="Technology"
               id="tech"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="tech">Technology</label>
           </div>
           <div className="cat">
             <input
               type="radio"
-              checked={category === "Sports"}
+              checked={cat === "Sports"}
               name="cat"
               value="Sports"
               id="sport"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="sport">Sports</label>
           </div>
           <div className="cat">
             <input
               type="radio"
-              checked={category === "Software"}
+              checked={cat === "Software"}
               name="cat"
               value="Software"
               id="Software"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="software">Software</label>
           </div>
           <div className="cat">
             <input
               type="radio"
-              checked={category === "Politics"}
+              checked={cat === "Politics"}
               name="cat"
               value="Politics"
               id="politics"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="Politics">Politics</label>
           </div>
