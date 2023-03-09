@@ -1,7 +1,7 @@
 import express from "express";
 import blogRoutes from "./routes/blogs.js";
 import authRoutes from "./routes/auth.js";
-import userRoutes from "./routes/users.js";
+
 import cookieParser from "cookie-parser";
 import multer from "multer";
 
@@ -28,7 +28,7 @@ app.post("/server/upload", upload.single("file"), function (req, res) {
 });
 
 app.use("/server/auth", authRoutes);
-app.use("/server/users", userRoutes);
+
 app.use("/server/blogs", blogRoutes);
 
 app.listen(8000, () => {

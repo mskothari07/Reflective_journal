@@ -80,7 +80,6 @@ const Write = () => {
             onChange={(e) => setFile(e.target.files[0])}
           />
           <div className="upload-bn">
-            <button>Save as a Draft</button>
             <button onClick={handlePublish}>Publish</button>
           </div>
         </div>
